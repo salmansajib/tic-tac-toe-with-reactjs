@@ -39,7 +39,7 @@ const Cell = ({ id, cell, go, setGo, cells, setCells, winningMessage }) => {
   return (
     <div className="flex size-[105px] items-center justify-center rounded-md bg-gradient-to-tr from-blue-300 via-green-300 to-pink-400">
       <div
-        className="flex size-[99px] cursor-pointer items-center justify-center rounded-md bg-zinc-950"
+        className="flex size-[99px] cursor-pointer items-center justify-center rounded-md bg-slate-950"
         id={id}
         onClick={handleClick}
       >
