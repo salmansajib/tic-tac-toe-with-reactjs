@@ -21,21 +21,26 @@ function App() {
       [2, 4, 6],
     ];
 
+    let isDraw = true;
+
     winningCombos.forEach((array) => {
       let circleWins = array.every((cell) => cells[cell] === "circle");
+      let crossWins = array.every((cell) => cells[cell] === "cross");
       if (circleWins) {
         setWinningMessage("Circle Wins!");
+        isDraw = false;
+        return;
+      }
+      if (crossWins) {
+        setWinningMessage("Cross Wins!");
+        isDraw = false;
         return;
       }
     });
 
-    winningCombos.forEach((array) => {
-      let crossWins = array.every((cell) => cells[cell] === "cross");
-      if (crossWins) {
-        setWinningMessage("Cross Wins!");
-        return;
-      }
-    });
+    if (isDraw && cells.every((cell) => cell !== "")) {
+      setWinningMessage("It's a Draw!");
+    }
   };
 
   const handleReset = () => {
