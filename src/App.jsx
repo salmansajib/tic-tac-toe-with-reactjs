@@ -7,7 +7,7 @@ function App() {
   const [go, setGo] = useState("circle");
   const [winningMessage, setWinningMessage] = useState(null);
 
-  const message = `It is now ${go}'s go.`;
+  const message = `${go}'s go.`;
 
   const checkScore = () => {
     const winningCombos = [
@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="flex h-screen flex-col items-center justify-center bg-zinc-950 text-gray-100">
-      <h1 className="mb-[5rem] text-4xl font-bold text-gray-200">
+      <h1 className="mb-[5rem] bg-gradient-to-tr from-blue-200 to-lime-400 bg-clip-text text-4xl font-bold text-transparent">
         Tic-Tac-Toe
       </h1>
       {/* gameboard */}
@@ -68,7 +68,9 @@ function App() {
           />
         ))}
       </div>
-      <p className="mt-5 text-xl font-medium">{winningMessage || message}</p>
+      <p className="mt-5 text-xl font-medium uppercase text-orange-400">
+        {winningMessage || message}
+      </p>
       {winningMessage && (
         <button
           onClick={handleReset}
